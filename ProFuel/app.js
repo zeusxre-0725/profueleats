@@ -23,14 +23,29 @@ const $ = (selector) => document.querySelector(selector);
 const money = (value) => `₹${value}`;
 
 function renderProducts(category = "all") {
-  const list = category === "all" ? products : products.filter((product) => product.category === category);
-  $("#productGrid").innerHTML = list.map((product) => `
-    <article class="product-card">
-      <img src="${product.image}" alt="${product.name}" loading="lazy">
-      <div class="product-info"><h3>${product.name}</h3><p>${product.description}</p>
-        <div class="product-bottom"><span class="price">${money(product.price)}</span><button class="add-button" data-add="${product.id}">Add to cart +</button></div>
+  const groups = [
+    {key:"breakfast", title:"OATS BOWLS", subtitle:"Nutritious. Delicious. Energising.", icon:"⌁"},
+    {key:"wraps", title:"WRAPS", subtitle:"Healthy. Filling. On-the-Go.", icon:"✦"},
+    {key:"meals", title:"EGG & CHICKEN MEALS", subtitle:"High Protein. Great Taste.", icon:"◯"},
+    {key:"addons", title:"ADD-ONS", subtitle:"Enhance Your Meal.", icon:"+"}
+  ];
+  const renderCard = (product) => `
+    <article class="menu-line">
+      <div><strong>${product.name}</strong><small>${product.description}</small></div>
+      <span class="menu-line-price">${money(product.price)}</span>
+      <button class="menu-add" data-add="${product.id}" aria-label="Add ${product.name} to cart">+</button>
+    </article>`;
+  const visibleGroups = category === "all" ? groups : groups.filter((group) => group.key === category);
+  $("#productGrid").innerHTML = visibleGroups.map((group) => {
+    const items = products.filter((product) => product.category === group.key);
+    return `<section class="menu-board menu-board-${group.key}">
+      <div class="menu-board-copy">
+        <header class="menu-board-heading"><span class="menu-board-icon">${group.icon}</span><div><h3>${group.title}</h3><p>${group.subtitle}</p></div></header>
+        <div class="menu-lines">${items.map(renderCard).join("")}</div>
       </div>
-    </article>`).join("");
+      <img class="menu-board-image" src="${items[0].image}" alt="${group.title.toLowerCase()}" loading="lazy">
+    </section>`;
+  }).join("");
 }
 function renderCart() {
   const items = cart.map((id) => products.find((product) => product.id === id)).filter(Boolean);
@@ -177,4 +192,4 @@ if (recommendationForm) recommendationForm.addEventListener("submit", (event) =>
   result.innerHTML = `<span class="result-mark">✦</span><div><strong>Try ${picks.map((product) => `${product.name} (${money(product.price)})`).join(" or ")}.</strong><p>These are the best current matches for your ${goal.toLowerCase()} goal, ${preference.toLowerCase()} preference and budget.</p></div>`;
 });
 setSession(session);
-renderProducts("breakfast"); renderCart();
+renderProducts(); renderCart();

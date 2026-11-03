@@ -177,4 +177,4 @@ if (recommendationForm) recommendationForm.addEventListener("submit", (event) =>
   result.innerHTML = `<span class="result-mark">✦</span><div><strong>Try ${picks.map((product) => `${product.name} (${money(product.price)})`).join(" or ")}.</strong><p>These are the best current matches for your ${goal.toLowerCase()} goal, ${preference.toLowerCase()} preference and budget.</p></div>`;
 });
 setSession(session);
-renderProducts(); renderCart();
+renderProducts("breakfast"); renderCart();

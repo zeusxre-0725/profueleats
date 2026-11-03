@@ -1,12 +1,20 @@
 const products = [
-  {id:1,category:"breakfast",name:"Peanut Butter Oats",description:"Warm oats with banana, berries and crunchy toppings.",price:119,image:"https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Banana_blueberry_oatmeal.jpg/500px-Banana_blueberry_oatmeal.jpg"},
-  {id:2,category:"breakfast",name:"Berry Chia Oats",description:"Creamy oats finished with fresh berries and seeds.",price:129,image:"https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/Oatmeal_porridge_with_fruits.jpg/500px-Oatmeal_porridge_with_fruits.jpg"},
-  {id:3,category:"wraps",name:"Chicken Tikka Wrap",description:"A smoky, spiced chicken tikka filling with fresh greens.",price:149,image:"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Chicken_Shawarma_Wrap_-_Lavash_2024-09-11.jpg/500px-Chicken_Shawarma_Wrap_-_Lavash_2024-09-11.jpg"},
-  {id:4,category:"wraps",name:"Paneer Tikka Wrap",description:"Charred paneer tikka with a bright Indian spice blend.",price:139,image:"assets/paneer-tikka-wrap.png"},
-  {id:5,category:"meals",name:"Tandoori Chicken Meal",description:"Charred tandoori chicken with lemon and fresh salad.",price:189,image:"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Tandoori_Chicken-2.jpg/500px-Tandoori_Chicken-2.jpg"},
-  {id:6,category:"meals",name:"Masala Egg Plate",description:"Boiled eggs topped with onion, herbs and Indian spices.",price:139,image:"https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Masala_Eggs.jpg/500px-Masala_Eggs.jpg"},
-  {id:7,category:"meals",name:"Keema Matar",description:"Homestyle minced meat cooked with peas and warming spices.",price:179,image:"https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Kheema_Mutter.JPG/500px-Kheema_Mutter.JPG"},
-  {id:8,category:"addons",name:"Boiled Masala Eggs",description:"Two boiled eggs finished with a simple masala topping.",price:49,image:"https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Boiled_masala_egg.jpg/500px-Boiled_masala_egg.jpg"}
+  {id:1,category:"breakfast",name:"Super Banana Oats",description:"Creamy oats with banana and nourishing toppings.",price:99,image:"https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Banana_blueberry_oatmeal.jpg/500px-Banana_blueberry_oatmeal.jpg"},
+  {id:2,category:"breakfast",name:"Crispy Apple Oats",description:"Warm oats with crisp apple and a lightly spiced finish.",price:109,image:"https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/Oatmeal_porridge_with_fruits.jpg/500px-Oatmeal_porridge_with_fruits.jpg"},
+  {id:3,category:"breakfast",name:"Protein Packed Oats",description:"A filling oat bowl made for a stronger start.",price:149,image:"https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/Oatmeal_porridge_with_fruits.jpg/500px-Oatmeal_porridge_with_fruits.jpg"},
+  {id:4,category:"breakfast",name:"Classic Bread Peanut Butter",description:"Toasted bread with smooth peanut butter.",price:39,image:"https://images.unsplash.com/photo-1553909489-cd47e0907980?auto=format&fit=crop&w=800&q=85"},
+  {id:5,category:"breakfast",name:"Loaded Bread Peanut Butter",description:"Toasted bread loaded with generous peanut butter.",price:69,image:"https://images.unsplash.com/photo-1553909489-cd47e0907980?auto=format&fit=crop&w=800&q=85"},
+  {id:6,category:"wraps",name:"Paneer Power Wrap",description:"Spiced paneer, fresh vegetables and a hearty roll.",price:119,image:"assets/paneer-tikka-wrap.png"},
+  {id:7,category:"wraps",name:"Chicken Power Wrap",description:"Seasoned chicken with greens in a satisfying wrap.",price:129,image:"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Chicken_Shawarma_Wrap_-_Lavash_2024-09-11.jpg/500px-Chicken_Shawarma_Wrap_-_Lavash_2024-09-11.jpg"},
+  {id:8,category:"wraps",name:"Spicy Chicken Rice Wrap",description:"Spiced chicken and rice wrapped for an easy meal.",price:149,image:"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Chicken_Shawarma_Wrap_-_Lavash_2024-09-11.jpg/500px-Chicken_Shawarma_Wrap_-_Lavash_2024-09-11.jpg"},
+  {id:9,category:"wraps",name:"Veg Protein Wrap",description:"Vegetables and plant protein in a fresh wrap.",price:109,image:"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/-Egg_wrap_-Delicious_-Tempted_-Friends_-Fun_-Bike_Ride_-Golden_memories.jpg/500px--Egg_wrap_-Delicious_-Tempted_-Friends_-Fun_-Bike_Ride_-Golden_memories.jpg"},
+  {id:10,category:"meals",name:"Egg Power Meal",description:"A protein-focused egg meal with fresh sides.",price:109,image:"https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Masala_Eggs.jpg/500px-Masala_Eggs.jpg"},
+  {id:11,category:"meals",name:"Chicken Power Bowl",description:"Seasoned chicken with grains and colourful vegetables.",price:149,image:"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Tandoori_Chicken-2.jpg/500px-Tandoori_Chicken-2.jpg"},
+  {id:12,category:"meals",name:"Chicken Fuel Wrap",description:"A filling chicken wrap for busy, active days.",price:129,image:"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Chicken_Shawarma_Wrap_-_Lavash_2024-09-11.jpg/500px-Chicken_Shawarma_Wrap_-_Lavash_2024-09-11.jpg"},
+  {id:13,category:"meals",name:"Spicy Chicken Rice Bowl",description:"Spicy chicken and rice with fresh vegetables.",price:149,image:"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Tandoori_Chicken-2.jpg/500px-Tandoori_Chicken-2.jpg"},
+  {id:14,category:"addons",name:"Extra Protein",description:"Add an extra protein serving to your meal.",price:30,image:"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Tandoori_Chicken-2.jpg/500px-Tandoori_Chicken-2.jpg"},
+  {id:15,category:"addons",name:"Extra Peanut Butter",description:"A rich peanut butter boost for oats or toast.",price:20,image:"https://images.unsplash.com/photo-1553909489-cd47e0907980?auto=format&fit=crop&w=800&q=85"},
+  {id:16,category:"addons",name:"Fresh Fruits",description:"Fresh seasonal fruit to complete your meal.",price:15,image:"https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?auto=format&fit=crop&w=800&q=85"}
 ];
 let cart = JSON.parse(localStorage.getItem("profuel-cart") || "[]");
 let users = JSON.parse(localStorage.getItem("profuel-users") || "[]");
@@ -77,7 +85,7 @@ function getLocalAssistantReply(message) {
   const breakfast = /breakfast|oats|morning/.test(query);
   const protein = /protein|strength|workout|gym|chicken|egg/.test(query);
   let matches = products.filter((product) => product.price <= budget);
-  if (vegetarian) matches = matches.filter((product) => product.id === 1 || product.id === 2 || product.id === 4);
+  if (vegetarian) matches = matches.filter((product) => [1, 2, 3, 4, 5, 6, 9, 15, 16].includes(product.id));
   if (breakfast) matches = matches.filter((product) => product.category === "breakfast");
   if (protein) matches = matches.filter((product) => product.category === "meals" || product.category === "wraps");
   if (!matches.length) return "I couldn’t find a verified menu match for those filters. Try a higher budget or ask about our current menu.";
@@ -155,11 +163,11 @@ if (recommendationForm) recommendationForm.addEventListener("submit", (event) =>
   const goal = $("#goal").value;
   const restrictions = $("#restrictions").value.trim().toLowerCase();
   let matches = products.filter((product) => product.price <= budget);
-  if (preference === "Vegetarian") matches = matches.filter((product) => [1, 2, 4].includes(product.id));
-  if (preference === "Chicken-friendly") matches = matches.filter((product) => [3, 5, 7].includes(product.id));
-  if (preference === "Egg-friendly") matches = matches.filter((product) => [6, 8].includes(product.id));
-  if (/dairy|milk/.test(restrictions)) matches = matches.filter((product) => ![1, 2, 4].includes(product.id));
-  if (/egg/.test(restrictions)) matches = matches.filter((product) => ![6, 8].includes(product.id));
+  if (preference === "Vegetarian") matches = matches.filter((product) => [1, 2, 3, 4, 5, 6, 9, 15, 16].includes(product.id));
+  if (preference === "Chicken-friendly") matches = matches.filter((product) => [7, 8, 11, 12, 13, 14].includes(product.id));
+  if (preference === "Egg-friendly") matches = matches.filter((product) => product.id === 10);
+  if (/dairy|milk/.test(restrictions)) matches = matches.filter((product) => ![6, 15].includes(product.id));
+  if (/egg/.test(restrictions)) matches = matches.filter((product) => product.id !== 10);
   const result = $("#recommendationResult");
   if (!matches.length) {
     result.innerHTML = '<span class="result-mark">!</span><div><strong>No exact match yet.</strong><p>Try widening your budget or removing one restriction. We only recommend meals currently listed on the ProFuel menu.</p></div>';
